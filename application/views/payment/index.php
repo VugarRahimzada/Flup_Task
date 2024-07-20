@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödəniş</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-    <style>
-        .table thead th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
-        .table tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .table tbody tr:hover {
-            background-color: #e9ecef;
-        }
-        .running-total {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
     <div class="container mt-4">
         <h2 class="mb-4">Ödəniş</h2>
 
@@ -60,6 +36,43 @@
         </table>
     </div>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#category-filter').on('change', function() {
+        var category_id = $(this).val();
+        
+        $.ajax({
+            url: '<?php echo site_url('payment/filter'); ?>',
+            method: 'POST',
+            data: { category_id: category_id },
+            dataType: 'json',
+            success: function(response) {
+                var payments = response.payments;
+                var total_amount = response.total_amount;
+                var rows = '';
+                var running_total = 0;
+
+                $.each(payments, function(index, payment) {
+                    if (payment.payment_type_name == 'Medaxil') {
+                        running_total += parseFloat(payment.amount);
+                    } else if (payment.payment_type_name == 'Mexaric') {
+                        running_total -= parseFloat(payment.amount);
+                    }
+
+                    rows += '<tr>';
+                    rows += '<td>' + parseFloat(payment.amount).toFixed(2) + ' ' + payment.currency_name + '</td>';
+                    rows += '<td>' + payment.payment_type_name + '</td>';
+                    rows += '<td>' + payment.feedback + '</td>';
+                    rows += '<td class="running-total">' + running_total.toFixed(2) + '</td>';
+                    rows += '</tr>';
+                });
+
+                $('tbody').html(rows);
+                $('#total-amount').text(total_amount);
+            }
+        });
+    });
+});
+</script>

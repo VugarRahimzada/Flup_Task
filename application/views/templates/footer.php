@@ -1,18 +1,11 @@
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-            </footer>
-            <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+</button>
+</nav>
+</div> 
+ 
 
     <!-- Bootstrap core JavaScript-->
 <!-- Bootstrap core JavaScript-->

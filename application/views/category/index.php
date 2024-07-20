@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valyuta</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-    <style>
-        .table thead th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
-        .table tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .table tbody tr:hover {
-            background-color: #e9ecef;
-        }
-        .text-center {
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
+
     <div class="container mt-4">
         <h2 class="mb-4">Kateqoryalar</h2>
 
@@ -53,7 +30,3 @@
             </tbody>
         </table>
     </div>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

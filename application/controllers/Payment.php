@@ -29,7 +29,13 @@ class Payment extends CI_Controller {
                 'feedback' => $this->input->post('feedback')
             );
             $this->Payment_model->add_payment($payment_data);
-            redirect('payment');
+
+            if ($this->input->is_ajax_request()) {
+                echo json_encode(array('status' => 'success'));
+                return;
+            } else {
+                redirect('payment');
+            }
         } else {
             $this->load->view('templates/header');
             $this->load->view('payment/create', $data);

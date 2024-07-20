@@ -20,6 +20,23 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url("assets/admin/");?>css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .table thead th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        .text-center {
+            font-style: italic;
+        }
+        </style>
 </head>
 
 <body id="page-top">
@@ -79,13 +96,6 @@
 
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <div id="content">
 
 
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </nav>
-            </div>

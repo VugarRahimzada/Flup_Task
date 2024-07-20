@@ -25,6 +25,7 @@ class Payment_model extends CI_Model {
         $query = $this->db->get('total_amount');
         $result = $query->row();
         $current_total = $result->total;
+    
 
         if ($data['payment_type_id'] == 4) {
             $new_total = $current_total + $data['amount'];
@@ -33,10 +34,11 @@ class Payment_model extends CI_Model {
         } else {
             return;
         }
-        $this->db->where('id', 1);
+    
+        $this->db->where('id', 1); 
         $this->db->update('total_amount', array('total' => $new_total));
     }
-
+    
     public function get_categories() {
         $this->db->select('id, name');
         $query = $this->db->get('category');

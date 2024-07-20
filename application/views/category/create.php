@@ -1,4 +1,6 @@
-    <h2>Add a New Category</h2>
+<div class="container mt-4">
+    
+    <h2>Yeni Kateqorya Əlavə Et</h2>
 
     <form action="<?php echo site_url('category/create'); ?>" method="post">
         <div class="form-group">
@@ -7,5 +9,4 @@
         </div>
         <button type="submit" class="btn btn-primary">Əlavə Et</button>
     </form>
-
-
+    </div>

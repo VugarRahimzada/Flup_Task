@@ -1,3 +1,5 @@
+<div class="container mt-4">
+
 <h2>Valyuta Əlavə ET </h2>
 
 <form action="<?php echo site_url('currency/create'); ?>" method="post">
@@ -7,3 +9,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Əlavə ET</button>
 </form>
+
+</div>
